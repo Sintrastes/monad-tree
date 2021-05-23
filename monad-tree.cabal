@@ -1,0 +1,25 @@
+cabal-version:       >=1.10
+
+name:                monad-tree
+version:             0.1.0.0
+synopsis:            Monad instances for a finger-tree-like data structure, and an EDSL for relational programming built off of the monad.
+license:             MIT
+license-file:        LICENSE
+author:              Nathan Bedell
+maintainer:          nbedell@tulane.edu
+category:            Control
+build-type:          Simple
+extra-source-files:  CHANGELOG.md, README.md
+
+library
+  exposed-modules:     
+      Control.Monad.Tree
+    , Control.Monad.Tree.Weighted
+  default-extensions: 
+      FlexibleInstances
+    , FlexibleContexts
+    , StandaloneDeriving
+  build-depends:       
+      base >=4.14 && <4.15
+  hs-source-dirs:      src
+  default-language:    Haskell2010
