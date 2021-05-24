@@ -217,6 +217,19 @@ dupTree5 tree = do
 applyRule :: (Functor f, Alternative (Tree n f)) => Tree n f a -> (a -> Tree n f a) -> Tree n f a
 applyRule tree deriveFacts = tree <|> (tree >>= deriveFacts)
 
+-- Note: Once there are no more facts to derive, this does not terminate.
+-- However, if we use the same form as applyRule above, the rules are only applied once.
+-- I also think that a better form for this function might be 
+--     Tree n f a -> (a -> f a) -> Tree n f a
+-- I think this would also be helpful for the terminination issue, since
+-- if the derivation returns empty from the alternative instance, we can stop deriving
+-- new results.
+-- Also, I think this would work better for probabalistic/weighted search, since
+-- we can then just depend on the Alternative instance for f, which would
+-- take care of the combination of weights.
+applyRule2 :: (Functor f, Alternative (Tree n f)) => Tree n f a -> ((a,a) -> Tree n f a) -> Tree n f a
+applyRule2 tree deriveFacts = tree <|> (applyRule2 ((dupTree tree) >>= deriveFacts) deriveFacts)
+
 -- | Apply a function to a tree deriving new facts that transforms the old facts,
 --   (for instance, by deriving a new set of facts).
 --
@@ -276,5 +289,5 @@ applyRuleL4 lift tree deriveFacts
 applyRuleL5 :: (Functor f, Alternative (Tree n f)) => (a -> b) -> Tree n f a -> ((a,a,a,a,a) -> Tree n f b) -> Tree n f b
 applyRuleL5 lift tree deriveFacts
     = (fmap lift tree) <|> ((dupTree5 tree) >>= deriveFacts)
-    
+
 

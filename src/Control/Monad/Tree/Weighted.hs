@@ -65,9 +65,14 @@ instance Semigroup Prob where
 instance Monoid Prob where
   mempty = Prob 1.0
 
+-- joinW :: (Monoid c, Functor f, Applicative f) => Weighted c f (Weighted c f a) -> Weighted c f a
+-- joinW (Weighted xs) = Weighted $ fmap (\(WeightedNode c ys) -> 
+--    _ -- ys `fmap` (\(WeightedNode c2 x) -> WeightedNode (c <> c2) x)
+--  ) xs
+
 instance (Monoid c, Functor f, Applicative f) => Applicative (Weighted c f) where
   pure x = Weighted $ pure $ WeightedNode mempty x 
-  fs <*> xs = undefined
+  (Weighted fs) <*> (Weighted xs) = undefined
 
 instance (Functor f, Alternative f) => Alternative (Weighted Prob f) where
   empty = Weighted $ empty
