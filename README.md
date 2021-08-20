@@ -10,6 +10,8 @@
   <img src="https://img.shields.io/badge/License-MIT-blue">
 </p>
 
-This package provides monad instances for a rose-tree-like data structure, allowing for the definition of non-deterministic computations that do not depend on a specific search procedure.
+This package provides monad instances for a rose-tree-like data structure `Tree`, allowing for the definition of non-deterministic computations that do not depend on a specific search procedure.
+
+When not used as a monad for nondeterministic computation, `Tree` can also be used as a general purpose rose tree data structure.
 
 For more information, see the documentation for the main Control.Monad.Tree module.
