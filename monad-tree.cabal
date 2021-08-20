@@ -1,8 +1,8 @@
 cabal-version:       >=1.10
 
 name:                monad-tree
-version:             0.1.0.0
-synopsis:            Monad instances for a finger-tree-like data structure, and an EDSL for relational programming built off of the monad.
+version:             0.1.0
+synopsis:            Monad instances for a rose-tree-like data structure that can be used for nondeterministic computations.
 license:             MIT
 license-file:        LICENSE
 author:              Nathan Bedell
@@ -14,7 +14,6 @@ extra-source-files:  CHANGELOG.md, README.md
 library
   exposed-modules:     
       Control.Monad.Tree
-    , Control.Monad.Tree.Weighted
   default-extensions: 
       FlexibleInstances
     , FlexibleContexts
