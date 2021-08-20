@@ -3,8 +3,10 @@ cabal-version:       >=1.10
 name:                monad-tree
 version:             0.1.0
 synopsis:            Tree data structure for nondeterministic computations.
-description:         monad-tree provides monad instances for a rose tree-like data structure that can be used for
-                      nondeterministic computations. This is similar to the list monad but allows for computations
+description:         This package provides monad instances for a rose tree-like data structure that can be used for
+                      nondeterministic computations.
+
+                     This is similar to the list monad but allows for computations
                       to remain agnostic about the specific search procedure used.
 license:             MIT
 license-file:        LICENSE
@@ -26,6 +28,7 @@ library
     , FlexibleContexts
     , StandaloneDeriving
   build-depends:       
-      base >=4.14 && <4.15
+        base >= 4.9 && <= 4.16 
+
   hs-source-dirs:      src
   default-language:    Haskell2010

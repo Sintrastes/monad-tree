@@ -73,7 +73,7 @@ instance Alternative f => Alternative (Tree () f) where
   empty   = Node () empty
   t <|> s = Node () $ (pure t) <|> (pure s)
   
--- dfs with a predicate on the labels
+-- | dfs with a predicate on the labels
 dfs' :: (n -> Bool) ->  Tree n [] a -> [a]
 dfs' p (Leaf x) = [x]
 dfs' p (Node label st) = [s | t <- st, s <- dfs' p t, pTree t]

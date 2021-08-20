@@ -1,2 +1,5 @@
 # monad-tree
-Monad instances for a finger-tree-like data structure, and an EDSL for relational programming built off of the monad.
+
+This package provides monad instances for a rose-tree-like data structure, allowing for the definition of non-deterministic computations that do not depend on a specific search procedure.
+
+For more information, see the documentation for the main Control.Monad.Tree module.
