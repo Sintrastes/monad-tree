@@ -2,7 +2,10 @@ cabal-version:       >=1.10
 
 name:                monad-tree
 version:             0.1.0
-synopsis:            Monad instances for a rose-tree-like data structure that can be used for nondeterministic computations.
+synopsis:            Tree data structure for nondeterministic computations.
+description:         monad-tree provides monad instances for a rose tree-like data structure that can be used for
+                      nondeterministic computations. This is similar to the list monad but allows for computations
+                      to remain agnostic about the specific search procedure used.
 license:             MIT
 license-file:        LICENSE
 author:              Nathan Bedell
@@ -10,6 +13,10 @@ maintainer:          nbedell@tulane.edu
 category:            Control
 build-type:          Simple
 extra-source-files:  CHANGELOG.md, README.md
+
+source-repository head
+  type: git
+  location: https://github.com/Sintrastes/monad-tree
 
 library
   exposed-modules:     
