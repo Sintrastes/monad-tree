@@ -23,6 +23,7 @@ source-repository head
 library
   exposed-modules:     
       Control.Monad.Tree
+    , Control.Monad.Trans.Tree
   default-extensions: 
       FlexibleInstances
     , FlexibleContexts
