@@ -4,8 +4,8 @@
   <a href="https://www.haskell.org/">
     <img src="https://img.shields.io/badge/Language-Haskell-blue">
   </a>
-  <a href="https://hackage.haskell.org/package/monad-tree-0.1.0">
-    <img src="https://img.shields.io/badge/Hackage-0.1.0-green">
+  <a href="https://hackage.haskell.org/package/monad-tree-0.2.0.0">
+    <img src="https://img.shields.io/badge/Hackage-0.2.0.0-green">
   </a>
   <img src="https://img.shields.io/badge/License-MIT-blue">
 </p>
